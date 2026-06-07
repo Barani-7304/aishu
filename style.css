@@ -1,0 +1,622 @@
+/* ==========================================================================
+   CSS Variables & Global Styles
+   ========================================================================== */
+:root {
+    --maroon: #5b0e14;
+    --gold: #d4af37;
+    --sandalwood: #e6d3a8;
+    --cream: #f8f1e5;
+    --temple-red: #8b0000;
+    --dark-overlay: rgba(20, 0, 0, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(212, 175, 55, 0.4);
+
+    --font-en-head: 'Cinzel Decorative', serif;
+    --font-en-body: 'Poppins', sans-serif;
+    --font-ta-head: 'Mukta Malar', sans-serif;
+    --font-cursive: 'Great Vibes', cursive;
+    --font-tech: 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-en-body);
+    background-color: var(--cream);
+    color: var(--maroon);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Typography & Utilities
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: var(--font-en-head);
+    color: var(--maroon);
+}
+
+.text-center { text-align: center; }
+.text-light { color: var(--cream) !important; }
+.w-100 { width: 100%; }
+.hidden { display: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    color: var(--maroon);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes floatUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); } 50% { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes floatPetal {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Loader
+   ========================================================================== */
+#loader {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--maroon);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease;
+}
+.kolam-spinner img {
+    width: 120px;
+    animation: spin 4s linear infinite;
+    filter: invert(80%) sepia(40%) saturate(600%) hue-rotate(350deg) brightness(100%) contrast(90%);
+}
+.loader-text {
+    margin-top: 20px;
+    color: var(--gold);
+    font-family: var(--font-en-head);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Music Control
+   ========================================================================== */
+.music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(91, 14, 20, 0.8);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+.music-control:hover { transform: scale(1.1); background: var(--maroon); }
+.music-icon { font-size: 1.5rem; }
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    background: url('assets/img/hero-bg.jpg') center/cover no-repeat fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--dark-overlay);
+    background: linear-gradient(to bottom, rgba(91,14,20,0.6), rgba(0,0,0,0.8));
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--cream);
+    animation: floatUp 1.5s ease-out 0.5s both;
+}
+.diya-glow {
+    margin-bottom: 20px;
+}
+.diya-img {
+    width: 60px;
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+.tamil-subtitle {
+    font-family: var(--font-ta-head);
+    font-size: 1.5rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+.couple-names {
+    font-family: var(--font-cursive);
+    font-size: 5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+    color: var(--cream);
+}
+.ampersand {
+    font-family: var(--font-en-head);
+    font-size: 3rem;
+    color: var(--gold);
+}
+.wedding-date {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+.wedding-location {
+    font-size: 1.2rem;
+    color: var(--sandalwood);
+    letter-spacing: 2px;
+}
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--gold);
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.arrow {
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    transform: rotate(45deg);
+    margin: 10px auto 0;
+    animation: floatUp 1.5s infinite;
+}
+
+/* ==========================================================================
+   Welcome Section
+   ========================================================================== */
+.welcome-section {
+    background: url('assets/img/mandala-bg.png') center/cover no-repeat;
+    background-color: var(--cream);
+}
+.tamil-greeting {
+    font-family: var(--font-ta-head);
+    font-size: 2.5rem;
+    color: var(--temple-red);
+    margin-bottom: 20px;
+}
+.section-divider {
+    width: 150px;
+    margin: 0 auto 30px;
+    display: block;
+    opacity: 0.8;
+}
+.welcome-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #4a4a4a;
+}
+.family-names p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   Timeline Section
+   ========================================================================== */
+.timeline-section {
+    background-color: var(--sandalwood);
+    position: relative;
+}
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--maroon);
+    top: 0; bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    right: -10px; top: 20px;
+    background-color: var(--gold);
+    border: 4px solid var(--maroon);
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+.timeline-item.right::after { left: -10px; }
+
+.timeline-content {
+    padding: 20px 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+.timeline-content h3 { margin-bottom: 10px; font-size: 1.5rem; }
+.timeline-content .date { color: var(--temple-red); font-weight: 600; margin-bottom: 10px; }
+
+/* ==========================================================================
+   Events Section (Glassmorphism)
+   ========================================================================== */
+.events-section {
+    background: url('assets/img/events-bg.jpg') center/cover fixed;
+    position: relative;
+}
+.events-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(91, 14, 20, 0.85);
+}
+.events-section .container { position: relative; z-index: 2; }
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--cream);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-card h3 { color: var(--gold); margin: 15px 0; font-size: 1.6rem; }
+.event-icon { font-size: 2.5rem; margin-bottom: 10px; }
+.event-date { font-weight: 600; margin-bottom: 5px; font-size: 1.1rem; }
+.event-time, .event-venue { font-size: 0.95rem; opacity: 0.9; margin-bottom: 5px; }
+
+.gold-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    border-color: var(--gold);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(212,175,55,0.1) 100%);
+}
+
+/* ==========================================================================
+   Countdown Section
+   ========================================================================== */
+.countdown-section {
+    background-color: var(--cream);
+}
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.time-box {
+    background: var(--maroon);
+    color: var(--gold);
+    width: 100px; height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.time-box span { font-size: 2.5rem; font-family: var(--font-en-head); font-weight: 700; line-height: 1; }
+.time-box p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; color: var(--cream); }
+
+/* ==========================================================================
+   Gallery Section
+   ========================================================================== */
+.gallery-section {
+    background-color: var(--sandalwood);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+.gallery-item:hover img { transform: scale(1.1); }
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid var(--gold);
+    border-radius: 5px;
+    animation: floatUp 0.3s ease-out;
+}
+.close-lightbox {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Venue & Blessings
+   ========================================================================== */
+.venue-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.venue-info, .map-container {
+    flex: 1;
+    min-width: 300px;
+}
+.venue-info {
+    background: var(--maroon);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+.venue-info h3 { color: var(--gold); margin-bottom: 15px; }
+.venue-info p { margin-bottom: 25px; line-height: 1.6; font-size: 1.1rem; }
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gold);
+    color: var(--maroon);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    text-align: center;
+}
+.btn-primary:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.blessings-section {
+    background: var(--cream);
+    padding: 100px 20px;
+}
+.lamp-icon {
+    width: 60px;
+    margin-bottom: 20px;
+}
+.tamil-quote {
+    font-family: var(--font-ta-head);
+    font-size: 2rem;
+    color: var(--temple-red);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   RSVP Section
+   ========================================================================== */
+.rsvp-section {
+    background: url('assets/img/mandala-bg.png') center/cover;
+    background-color: var(--sandalwood);
+}
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border: 1px solid var(--gold);
+}
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--maroon);
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-en-body);
+    font-size: 1rem;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 5px rgba(212,175,55,0.3);
+}
+.success-msg {
+    margin-top: 20px;
+    color: green;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-section {
+    background: var(--maroon);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 20px;
+}
+.footer-divider { width: 120px; margin-bottom: 20px; filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(30deg); }
+.tamil-ending {
+    font-family: var(--font-ta-head);
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+.couple-names-small {
+    font-family: var(--font-cursive);
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+.footer-credits { font-size: 0.9rem; opacity: 0.7; }
+
+/* ==========================================================================
+   Floating Petals
+   ========================================================================== */
+#petals-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+.petal {
+    position: absolute;
+    width: 15px; height: 15px;
+    background: #fff;
+    border-radius: 15px 0 15px 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    animation: floatPetal linear forwards;
+}
+
+/* ==========================================================================
+   Media Queries (Mobile Responsiveness)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .couple-names { font-size: 3.5rem; }
+    .ampersand { font-size: 2rem; }
+    .section-title { font-size: 2.2rem; }
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 0; }
+    .timeline-item.right { left: 0; }
+    .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
+    .venue-wrapper { flex-direction: column; }
+    .form-wrapper { padding: 25px; }
+}
+
+/* ==========================================================================
+   Engineering Theme Additions
+   ========================================================================== */
+.tech-subtitle {
+    font-family: var(--font-tech);
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.tech-icon {
+    font-family: var(--font-tech);
+    display: inline-block;
+    animation: spin 6s linear infinite;
+    filter: drop-shadow(0 0 5px var(--gold));
+}
+
+.timeline-section {
+    background-color: var(--sandalwood);
+    position: relative;
+    background-image: radial-gradient(var(--gold) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0;
+}
+

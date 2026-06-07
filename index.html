@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aiswarya & Kailash - Wedding Invitation</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Mukta+Malar:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="kolam-spinner">
+            <img src="assets/img/kolam.png" alt="Loading Kolam" class="spin">
+        </div>
+        <p class="loader-text">Loading Blessings...</p>
+    </div>
+
+    <!-- Background Music Control -->
+    <div class="music-control" id="music-toggle">
+        <span class="music-icon">🎵</span>
+    </div>
+    <audio id="bgm" loop>
+        <source src="assets/audio/bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Petals Container -->
+    <div id="petals-container"></div>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <div class="diya-glow">
+                <img src="assets/img/diya.png" alt="Diya" class="diya-img">
+            </div>
+            <p class="tamil-subtitle">திருமண அழைப்பிதழ்</p>
+            <h1 class="couple-names">Aiswarya <span class="ampersand">&</span> Kailash</h1>
+            <p class="wedding-date">January 28, 2027</p>
+            <p class="wedding-location">Le Pondy, Puducherry</p>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll to Discover</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- 2. Traditional Welcome Section -->
+    <section id="welcome" class="welcome-section">
+        <div class="container text-center reveal">
+            <h2 class="tamil-greeting">அன்புடன் வரவேற்கிறோம்</h2>
+            <img src="assets/img/kolam-divider.png" alt="Kolam Divider" class="section-divider">
+            <p class="welcome-message">
+                With the blessings of our elders and the divine grace of the Almighty, we cordially invite you and your
+                family to grace our wedding ceremony. Your presence will multiply our joy and make this occasion truly
+                auspicious.
+            </p>
+            <div class="family-names">
+                <p>- By the loving families of</p>
+                <p><strong>Mrs. Vimala Balan & Mr. R Balan</strong> (Bride)</p>
+                <p><strong>The Groom's Family</strong> (Groom)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Couple Story Timeline -->
+    <section id="timeline" class="timeline-section">
+        <div class="container reveal">
+            <h2 class="section-title">Our Journey <br><span class="tech-subtitle">(System Sync & Soul Resonance)</span></h2>
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content glass-card">
+                        <h3>First Connection</h3>
+                        <p class="date">October 2025</p>
+                        <p>A simple coffee turned into endless data streams. We realized our frequencies matched perfectly.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content glass-card">
+                        <h3>The Proposal (Handshake)</h3>
+                        <p class="date">December 2026</p>
+                        <p>Under the starlit sky, a protocol was established to share a lifetime of love, laughter, and debugging.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content glass-card">
+                        <h3>The Deployment</h3>
+                        <p class="date">January 2027</p>
+                        <p>System compiled without warnings. We tie the knot and enter our infinite forever loop together.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Wedding Events Section -->
+    <section id="events" class="events-section parallax-bg">
+        <div class="events-overlay"></div>
+        <div class="container reveal">
+            <h2 class="section-title text-light">Auspicious Events</h2>
+            <div class="events-grid">
+
+                <div class="event-card glass-card gold-hover">
+                    <div class="event-icon"><span class="tech-icon">⚙️</span>💍</div>
+                    <h3>Engagement</h3>
+                    <p class="event-date">January 27, 2027</p>
+                    <p class="event-time">10:00 AM - 12:30 PM</p>
+                    <p class="event-venue">Le Pondy, Puducherry</p>
+                </div>
+
+                <div class="event-card glass-card gold-hover">
+                    <div class="event-icon"><span class="tech-icon">⚡</span>🔥</div>
+                    <h3>Muhurtham (Wedding)</h3>
+                    <p class="event-date">January 28, 2027</p>
+                    <p class="event-time">6:00 AM - 7:30 AM</p>
+                    <p class="event-venue">Le Pondy, Puducherry</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Countdown Timer -->
+    <section id="countdown" class="countdown-section">
+        <div class="container text-center reveal">
+            <h2 class="section-title">The Wait is Almost Over</h2>
+            <div class="timer-wrapper">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Days</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container reveal">
+            <h2 class="section-title">Pre-Wedding Glimpses</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Aiswarya&backgroundColor=e6d3a8" alt="Cartoon Bride"></div>
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Kailash&backgroundColor=e6d3a8" alt="Cartoon Groom"></div>
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Couple&backgroundColor=e6d3a8" alt="Happy Couple"></div>
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Love&backgroundColor=e6d3a8" alt="Love"></div>
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Engineering&backgroundColor=e6d3a8" alt="Engineers"></div>
+                <div class="gallery-item"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Wedding&backgroundColor=e6d3a8" alt="Wedding Bells"></div>
+            </div>
+        </div>
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </section>
+
+    <!-- 7. Venue Section -->
+    <section id="venue" class="venue-section">
+        <div class="container reveal">
+            <h2 class="section-title">Venue Details</h2>
+            <div class="venue-wrapper">
+                <div class="venue-info glass-card">
+                    <h3>Le Pondy</h3>
+                    <p>No.3, Lake View Road, Pudukuppam, Puducherry 605007</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-primary">Get Directions</a>
+                </div>
+                <div class="map-container">
+                    <!-- Embedded Map Placeholder -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1m1!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Blessings Section -->
+    <section id="blessings" class="blessings-section">
+        <div class="container text-center reveal">
+            <img src="assets/img/kuthu-vilakku.png" alt="Lamp" class="lamp-icon">
+            <h2 class="tamil-quote">"இரு மனம் இணைந்து ஒரு மனமாக மாறும் தருணம்"<br><span style="font-size: 1rem; font-family: var(--font-en-body);">(Resonance frequency perfectly matched)</span></h2>
+            <p>Your blessings mean the world to us.</p>
+        </div>
+    </section>
+
+    <!-- 9. RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <div class="container reveal">
+            <h2 class="section-title">RSVP</h2>
+            <p class="text-center rsvp-desc">Please let us know if you can make it!</p>
+            <div class="form-wrapper glass-card">
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" min="1" max="10" required value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">Will you attend?</label>
+                        <select id="attendance">
+                            <option value="yes">Yes, definitely!</option>
+                            <option value="no">Sorry, can't make it.</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Send RSVP</button>
+                    <p id="rsvp-msg" class="success-msg hidden">Thank you! Your response is saved locally.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+    <footer class="footer-section">
+        <img src="assets/img/kolam-divider.png" alt="Divider" class="footer-divider">
+        <p class="tamil-ending">வாழ்க வளமுடன்</p>
+        <h2 class="couple-names-small">Aiswarya & Kailash</h2>
+        <p class="footer-credits">Made with ❤️ for the Big Day</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
